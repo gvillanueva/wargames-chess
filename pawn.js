@@ -5,7 +5,7 @@
 var WargamesUnit = require("../wargames/unit.js");
 var WargamesError = require("../wargames/error.js");
 
-Pawn.prototype = Object.create(WargamesUnit);
+Pawn.prototype = Object.create(WargamesUnit.prototype);
 Pawn.prototype.constructor = Pawn;
 
 function Pawn(x,y,z,image) {
@@ -19,10 +19,11 @@ function Pawn(x,y,z,image) {
  * @param z Z-coordinate of unit's destination.
  */
 Pawn.prototype.move = function(x,y,z) {
-    WargamesUnit.prototype.move.call(this,x,y,z);
     console.log("Pawn.move()");
     if (x != this.x)
-        throw new WargamesError("Invalid move: Pawn only move diagonally when attacking");
+        throw new WargamesError("Invalid move: Pawns only move diagonally when attacking");
+
+    WargamesUnit.prototype.move.call(this,x,y,z);
 }
 
 module.exports = Pawn;
