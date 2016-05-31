@@ -37,19 +37,26 @@ module.exports = {
         for (var wp = 0; wp < 8; wp++)
             units[i++] = new Pawn(
                 wp * GRID_SIZE_SCALED,
-                1 * GRID_SIZE_SCALED, 0);
+                1 * GRID_SIZE_SCALED,
+                0,
+                ":/chess/images/wPawn.bmp"
+            );
 
         // Set up dark units
         for (var bp = 0; bp < 8; bp++)
             units[i++] = new Pawn(
                 bp * GRID_SIZE_SCALED,
-                6 * GRID_SIZE_SCALED, 0);
+                6 * GRID_SIZE_SCALED,
+                0,
+                ":/chess/images/bPawn.bmp"
+            );
 
         return {
             bounds: {
                 x: 0, y: 0,
                 w: GRID_SIZE_SCALED * GRID_COLS,
-                h: GRID_SIZE_SCALED * GRID_ROWS },
+                h: GRID_SIZE_SCALED * GRID_ROWS
+            },
             units: units
         };
     }

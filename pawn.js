@@ -8,8 +8,8 @@ var WargamesError = require("../wargames/error.js");
 Pawn.prototype = Object.create(WargamesUnit);
 Pawn.prototype.constructor = Pawn;
 
-function Pawn(x,y,z) {
-    WargamesUnit.prototype.constructor.call(this,x,y,z);
+function Pawn(x,y,z,image) {
+    WargamesUnit.prototype.constructor.call(this,x,y,z,image);
 }
 
 /**
